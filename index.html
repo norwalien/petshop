@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Norwalien – Kjæledyrsprodukter</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #fefcf9;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #b2d8d8; /* dus mintblå */
+      color: #2f3e46;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 1.5em;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar li {
+      margin: 15px 0;
+      cursor: pointer;
+    }
+
+    .sidebar li:hover {
+      text-decoration: underline;
+    }
+
+    .main {
+      flex-grow: 1;
+      padding: 30px;
+      box-sizing: border-box;
+      background-color: #fefcf9;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    h1 {
+      color: #52796f;
+    }
+
+    .logo {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    a {
+      color: #52796f;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo">
+      <img src="norwalien-logo.png" alt="Norwalien logo">
+    </div>
+    <h2>Meny</h2>
+    <ul>
+      <li onclick="showSection('home')">Hjem</li>
+      <li onclick="showSection('produkter')">Produkter</li>
+      <li onclick="showSection('kontakt')">Kontakt</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div id="home">
+      <h1>Velkommen til Norwalien</h1>
+      <p>Norwalien tilbyr søte, moderne og miljøvennlige produkter for kjæledyr – med fokus på trivsel, design og bærekraft.</p>
+    </div>
+
+    <div id="produkter" class="hidden">
+      <h1>Våre produkter</h1>
+      <ul>
+        <li>Myk tyggeleke formet som øgle</li>
+        <li>Økologisk kattemat med søt emballasje</li>
+        <li>Resirkulert kattesand med lavt støv</li>
+        <li>Designet matskål i bambus med potetrykk</li>
+      </ul>
+    </div>
+
+    <div id="kontakt" class="hidden">
+      <h1>Kontakt oss</h1>
+      <p>Send oss en e-post på <a href="mailto:kontakt@norwalien.no">kontakt@norwalien.no</a></p>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.main > div').forEach(div => {
+        div.classList.add('hidden');
+      });
+      document.getElementById(id).classList.remove('hidden');
+    }
+  </script>
+</body></html>
